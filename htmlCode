@@ -1,0 +1,90 @@
+<head>
+    <title>Wesly's ServiceNow Reference</title>
+    <style>
+        /* General Page Styles */
+        body {
+            background-color: rgb(14, 25, 43);
+            margin: 10px;
+            padding: 10px;
+            font-family: Arial, sans-serif;
+            font-size: 1em;
+            color: rgb(186, 186, 186);
+            text-align: left;
+        }
+        /* Header Style */
+        header {
+            color: white;
+            font-family: Verdana, sans-serif;
+            text-align: center;
+        }
+        .section{
+            color: lightcoral;
+        }
+        /* Clickable Headers */
+        .drop-down-header {
+            cursor: pointer;
+            color: #FFFDD0;
+            text-decoration: underline;
+        }
+        .header-subtext{
+            color: grey;
+        }
+        /* Hidden Text for Toggle */
+        .hidden-text {
+            display: none;
+            margin: 0.5em 50px;
+        }
+    </style>
+</head>
+
+   <header>
+
+    <h1>Wesly's ServiceNow Quick Reference</h1>
+    <p class="header-subtext">This website will serve as a reference for ServiceNow tips/tricks I have learned over the years.<br> Note that some of these references are quoted from SN forums (in an effort to personally preserve them).</p>
+
+   </header>
+
+   <br>
+   <br>
+
+   <body>
+
+    <h2 class="section"> URL References</h2> <!-- begin section URL References-->
+
+      <h3 class="drop-down-header" onclick="toggleText('DescendingTip')">How to display grouped records in descending order</h3>
+        <p id="DescendingTip" class="hidden-text">The first parameter will sort in Ascending order whilst the latter in Descending order.<br><br>
+        &sysparm_group_sort=COUNT<br>
+        &sysparm_group_sort=COUNTDESC<br><br>
+        If the above doesn't work, try one of these 2 parameters<br><br>
+        %26sysparm_group_sort%3DCOUNTDESC<br>
+        %26sysparm_group_sort%3DCOUNT<br>
+        </p>
+
+    <!-- end section URL References-->
+
+    <h2 class="section"> Code References</h2> <!-- begin section Code References-->
+
+      <h3 class="drop-down-header" onclick="toggleText('text2')">Header 2</h3>
+      <p id="text2" class="hidden-text">This is the additional text for Header 2.</p>
+
+    <!-- begin section Code References-->
+
+    <h2 class="section"> Other References</h2> <!-- begin section Other References-->
+
+      <h3 class="drop-down-header" onclick="toggleText('text3')">Header 3</h3>
+      <p id="text3" class="hidden-text">This is the additional text for Header 3.</p>
+
+    <!-- begin section Other References-->
+
+   </body>
+   <script>
+      function toggleText(id) {
+          const element = document.getElementById(id);
+          if (element.style.display === "none" || element.style.display === "") {
+              element.style.display = "block";
+          } else {
+              element.style.display = "none";
+          }
+      }
+   </script>
+</html>

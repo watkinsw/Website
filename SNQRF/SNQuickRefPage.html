@@ -1,0 +1,108 @@
+<html lang="en-US">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width" />
+        <title>ServiceNow Reference</title>
+    
+        <style>   
+            /* General Page Styles */
+            body {
+                background-color: rgb(14, 25, 43);
+                margin: 10px;
+                padding: 10px;
+                font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+                font-size: 1.025em;
+                color: rgb(186, 186, 186);
+                text-align: left;
+            }
+            /* Header Style */
+            header {
+                color: hsl(0, 0%, 95%);
+                font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+                text-align: center;
+                font-size: 125%;
+            }
+            .section{
+                color: #beaffa;
+            }
+            /* Clickable Headers */
+            .drop-down-header {
+                cursor: pointer;
+                color: #e6e6e6;
+                text-decoration: underline;
+            }
+            .header-subtext{
+                color: grey;
+            }
+            /* Hidden Text for Toggle */
+            .hidden-text {
+                display: none;
+                margin: 0.5em 50px;
+            }
+        </style>
+    </head>
+
+    <body>
+        <div class="nav-bar">
+            <ul style="list-style: none; display: flex; gap: 20px; padding: 0; margin: 0;">
+            <li><a href="/" style="text-decoration: none; color: inherit">Home</a></li>
+            <li><a href="/snqrf" style="text-decoration: none; color: inherit">SNQRF</a></li>
+            <li><a href="/aboutme" style="text-decoration: none; color: inherit">About Me</a></li>
+            <li><a href="/code" style="text-decoration: none; color: inherit">Code</a></li>
+            </ul>
+        </div>
+
+        <header>
+            <h1>Wesly's ServiceNow Quick Reference</h1>
+            <p class="header-subtext">This website will serve as a reference for ServiceNow tips/tricks I have learned over the years.<br> Note that some of these references are quoted from SN forums (in an effort to personally preserve them).</p>
+        </header>
+
+        <br>
+        <br>
+        <h2 class="section"> URL References</h2> <!-- begin section URL References-->
+
+            <h3 class="drop-down-header" onclick="toggleText('DescendingTip')">How to display 'group by X' records in descending order</h3>
+                <p id="DescendingTip" class="hidden-text">The first parameter will sort in Ascending order whilst the latter in Descending order. APPEND THIS TO END OF URL.<br><br>
+                    &sysparm_group_sort=COUNT<br>
+                    &sysparm_group_sort=COUNTDESC<br><br>
+                    If the above doesn't work, try one of these 2 parameters<br><br>
+                    %26sysparm_group_sort%3DCOUNTDESC<br>
+                    %26sysparm_group_sort%3DCOUNT<br>
+                </p>
+
+            <h3 class="drop-down-header" onclick="toggleText('PortalTip')">(Polaris) How to route to platform homepage instead of portal</h3>
+                <p id="PortalTip" class="hidden-text">If Polaris Experience, append <br><strong>/now/nav/ui</strong><br> to the end of your base url. <br>
+                    base url: <em>www.instance-name.service-now.com</em> or <em>www.instance-name.servicenowservices.com</em>
+                    <br>
+                </p>
+
+        <!-- end section URL References-->
+
+        <h2 class="section"> Code References</h2> <!-- begin section Code References-->
+
+            <h3 class="drop-down-header" onclick="toggleText('text2')">Header 2</h3>
+                <p id="text2" class="hidden-text">This is the additional text for Header 2.</p>
+
+        <!-- end section Code References-->
+
+        <h2 class="section"> Other References</h2> <!-- begin section Other References-->
+
+            <h3 class="drop-down-header" onclick="toggleText('text3')">Header 3</h3>
+                <p id="text3" class="hidden-text">This is the additional text for Header 3.</p>
+
+        <!-- end section Other References-->
+
+    </body>
+
+    <script>
+        function toggleText(id) {
+            const element = document.getElementById(id);
+            if (element.style.display === "none" || element.style.display === "") {
+                element.style.display = "block";
+            } else {
+                element.style.display = "none";
+            }
+        }
+    </script>
+
+</html>

@@ -11,7 +11,7 @@ def lambda_handler(event, context):
         }
     }
 
-    file_path = os.path.join(os.path.dirname(__file__), 'SNQRF_Page.html')
+    file_path = os.path.join(os.path.dirname(__file__), 'SNQuickRefPage.html')
 
     try:
         # Read the contents of the htmlCode file

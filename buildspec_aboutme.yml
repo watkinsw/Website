@@ -5,14 +5,11 @@ phases:
       nodejs: 14
     commands:
       - echo "Installing dependencies..."
-      - cd 'About Me'
       - npm install
   build:
     commands:
       - echo "Zipping deployment package..."
-      - cd 'About Me'
-      - zip -r ../deployment_package.zip .
-      - cd ..
+      - zip -r deployment_package.zip .
   post_build:
     commands:
       - echo "Updating Lambda Function..."

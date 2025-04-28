@@ -2,7 +2,7 @@ import { promises as fs } from 'fs';
 
 export const handler = async (event) => {
   try {
-    const htmlContent = await fs.readFile('home/HomePage.html', 'utf-8');
+    const htmlContent = await fs.readFile('HomePage.html', 'utf-8');
 
     const response = {
       statusCode: 200,

@@ -1,0 +1,17 @@
+version: 0.2
+phases:
+  install:
+    runtime-versions:
+      nodejs: 14
+    commands:
+      - echo "Installing dependencies..."
+      - npm install
+  build:
+    commands:
+      - echo "Zipping deployment package..."
+      - zip -r deployment_package.zip code/
+  post_build:
+    commands:
+      - echo "Updating Lambda Function..."
+      - aws lambda update-function-code --function-name code --zip-file fileb://deployment_package.zip
+      - echo "DONE!!"

@@ -9,9 +9,11 @@ phases:
   build:
     commands:
       - echo "Zipping deployment package..."
-      - zip -r deployment_package.zip aboutme/
+      - cd code
+      - zip -r ../deployment_package.zip .
+      - cd ..
   post_build:
     commands:
       - echo "Updating Lambda Function..."
-      - aws lambda update-function-code --function-name aboutMe --zip-file fileb://deployment_package.zip
+      - aws lambda update-function-code --function-name code --zip-file fileb://deployment_package.zip
       - echo "DONE!!"

@@ -13,7 +13,6 @@
       font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
       font-size: 1.025em;
       color: rgb(186, 186, 186);
-      text-align: center;
     }
 
     #nav-bar-list {
@@ -47,21 +46,45 @@
 
     #fade-in-header {
       color: #b6b6b6;
-      opacity: 0; /* Initially invisible */
-      animation: fadeIn 2s ease-in forwards; /* Apply animation */
-  }
-  @keyframes fadeIn {
-    from {
+      opacity: 0;
+      /* Initially invisible */
+      animation: fadeIn 1s ease-in forwards;
+      /* Apply animation */
+    }
+
+    #fade-in-text {
+      color: #b6b6b6;
+      opacity: 0;
+      /* Initially invisible */
+      animation: fadeIn 1s ease-in forwards;
+      /* Apply animation */
+      animation-delay: 1s;
+    }
+
+    #table-of-contents {
+      color: #b6b6b6;
+      opacity: 0;
+      animation: fadeIn 1s ease-in forwards;
+      /* Apply animation */
+      animation-delay: 2s;
+    }
+    #inline-link{
+      color: #b6b6b6;
+    }
+
+    @keyframes fadeIn {
+      from {
         opacity: 0;
-        transform: translateY(-20px); /* Start above the viewport */
-    }
-    to {
+        transform: translateY(-20px);
+        /* Start above the viewport */
+      }
+
+      to {
         opacity: 1;
-        transform: translateY(0); /* End at the final position */
+        transform: translateY(0);
+        /* End at the final position */
+      }
     }
-}
-  
-    
   </style>
 
 </head>
@@ -74,9 +97,16 @@
     <!-- <li><a href="/aboutme">About Me</a></li> -->
   </ul>
 </div>
+
 <body>
-  <h1 id="fade-in-header">Hello, welcome to my personal site.</h1>
-  <p>This site will be used as a reference for things I've worked on.</p>
+  <div style="text-align: center;">
+    <h1 id="fade-in-header">Hello, welcome to my personal site.</h1>
+    <p id="fade-in-text">This site will be used as a reference for things I've worked on.</p>
+  </div>
+  <div id="table-of-contents">
+    <br>
+    <p><a id="inline-link"href="/snqrf">ServiceNow Reference Page</a> - Here I store information helpful to ServiceNow Development (SysAdmin/Developer)</p>
+  </div>
 </body>
 
 </html>
